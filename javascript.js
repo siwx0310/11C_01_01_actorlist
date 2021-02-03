@@ -22,6 +22,7 @@ function showActors() {
 
   const templatePointer = document.querySelector("template");
   const listPointer = document.querySelector("#list");
+  const popop = document.querySelector("#popop");
 
   listPointer.innerHTML = "";
 
@@ -33,9 +34,23 @@ function showActors() {
       clone.querySelector(".movie").textContent = movie.movie;
       clone.querySelector(".full_name").textContent = movie.fullname;
 
+      clone
+        .querySelector("#actor")
+        .addEventListener("click", () => showPopOp(movie));
       listPointer.appendChild(clone);
     }
   });
+}
+
+document
+  .querySelector("#luk")
+  .addEventListener("click", () => (popop.style.display = "none"));
+
+function showPopOp(movie) {
+  console.log(movie);
+  popop.style.display = "block";
+  popop.querySelector(".movie").textContent = movie.movie;
+  popop.querySelector(".full_name").textContent = movie.fullname;
 }
 
 function addEventListenersToButtons() {
