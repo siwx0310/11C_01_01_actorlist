@@ -1,0 +1,48 @@
+Actorlist
+The techniques in this submission is a foundation for our work on Thursday, 
+and thus must be completed before that. It is also a chance to recap your 
+learnings from last semester; there are no new topics introduced.
+
+Description of the assignment
+You are going to build a simple webpage that displays a list of actors. The 
+list is read from a JSON-file containing a single array. Each item in the array contains the full name of the actor, 
+and a movie they appear in. There are four different movies: Pulp Fiction, Fight Club, Goodfellas, and Inception.
+
+The actors are not sorted in any particular order.
+
+The user must be able to click on a actor, and see a "pop-up" box with detailed information. 
+There is no other information than the actor name and movie name available.
+
+JSON
+Find the JSON-file attached to this assignment, download it locally, 
+and let your program fetch it from where you decide to put it.
+
+Webpage
+The webpage must be created with HTML, CSS and JavaScript (only vanilla JS, no frameworks, l
+ibraries, or plugins allowed).
+
+It must load the JSON file using JavaScript, and build a list in HTML, 
+displaying the name and movie of each actor. You are free to layout the page anyway you like, 
+and choose either ul, li, table, or something completely different for the list.
+
+The CSS should be as minimal as possible, but you are encouraged to make it look cool. 
+Feel free to implement graphical elements from other designs on the web. Originality is not a requirement.
+
+The only required interactivity is that the user can click on a actor, and see further details.
+
+Extras
+You are not required to add anything else, but if you have the time, and need inspiration, 
+think of some of these features:
+
+Make the list filter the actors into different movies
+Make the list sort the actors by first or last name
+Make the list color the actors differently, depending on which movie they are in
+Add animations to open and close "details" or "movies" when selecting different actors or movies
+Hand-in details
+Where
+
+Upload the solution to your domain, and insert the link as the answer to this assignment.
+Or you can use github-pages if you prefer - just make sure you link to the implementation, and not the github repository.
+
+Feedback
+The assignment will form the basis of a task given in class Thursday, and feedback will be given collectively during class.
