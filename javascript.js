@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", start);
 
 let actors;
 let filter = "all";
+let popop = document.querySelector("#popop");
+let closeWin = document.querySelector("#close");
 
 async function start() {
   console.log("start");
@@ -13,6 +15,8 @@ async function start() {
   let jsonData = await fetch(jsonFile);
   actors = await jsonData.json();
   console.log(actors);
+  closeWin.style.display = "none";
+
   showActors();
   addEventListenersToButtons();
 }
@@ -20,9 +24,8 @@ async function start() {
 function showActors() {
   console.log(actors);
 
-  const templatePointer = document.querySelector("template");
-  const listPointer = document.querySelector("#list");
-  const popop = document.querySelector("#popop");
+  let templatePointer = document.querySelector("template");
+  let listPointer = document.querySelector("#list");
 
   listPointer.innerHTML = "";
 
@@ -31,8 +34,8 @@ function showActors() {
       console.log(movie);
 
       let clone = templatePointer.cloneNode(true).content;
-      clone.querySelector(".movie").textContent = movie.movie;
-      clone.querySelector(".full_name").textContent = movie.fullname;
+      clone.querySelector(".movie").textContent = movie.fullname;
+      clone.querySelector(".full_name").textContent = movie.movie;
 
       clone
         .querySelector("#actor")
@@ -42,15 +45,14 @@ function showActors() {
   });
 }
 
-document
-  .querySelector("#luk")
-  .addEventListener("click", () => (popop.style.display = "none"));
+closeWin.addEventListener("click", () => (popop.style.display = "none"));
 
 function showPopOp(movie) {
   console.log(movie);
+  closeWin.style.display = "";
   popop.style.display = "block";
-  popop.querySelector(".movie").textContent = movie.movie;
-  popop.querySelector(".full_name").textContent = movie.fullname;
+  popop.querySelector(".movie").textContent = movie.fullname;
+  popop.querySelector(".full_name").textContent = movie.movie;
 }
 
 function addEventListenersToButtons() {
