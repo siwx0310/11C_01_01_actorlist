@@ -11,7 +11,7 @@ let closeWin = document.querySelector("#close");
 
 async function start() {
   console.log("start");
-  let jsonFile = "/actors.json";
+  let jsonFile = "../actors.json";
   let jsonData = await fetch(jsonFile);
   actors = await jsonData.json();
   console.log(actors);
